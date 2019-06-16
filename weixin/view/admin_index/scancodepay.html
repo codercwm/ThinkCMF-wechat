@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="__PLUGIN_TMPL__/public/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STATIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .wrap {
+            padding: 20px 20px 70px;
+        }
+        .table{
+            margin-top:20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:cmf_plugin_url('Weixin://AdminIndex/index')}">微信插件功能列表</a></li>
+        <li class="active"><a>微信扫码支付</a></li>
+    </ul>
+    <table class="table table-hover table-bordered table-list">
+        <tbody>
+        <tr>
+            <td>示例</td>
+            <td>
+                <a href="{:cmf_plugin_url('Weixin://AdminIndex/scanCodePayExample')}">
+                    微信扫码支付
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>代码</td>
+            <td>
+                <textarea readonly cols="80" rows="10" id="show_code">
+        $class = new \plugins\weixin\WeixinPlugin();
+        $param = [
+            'body' => '示例测试',//商品说明
+            'out_trade_no' => date('YmdHis'),//订单号
+            'total_fee' => 1,//价格，单位分
+            'notify_url' => 'plugin/weixin/wx_notify/index',//异步回调地址，不含域名
+            'product_id' => 1,//商品id
+        ];
+        $imgstr = $class->payQrcode($param);
+                </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>说明</td>
+            <td>
+                $imgstr 是base64数据，直接放入img标签的src中，
+                如果$imgstr为空即是生成失败
+            </td>
+        </tr>
+        <tr>
+            <td>回调说明</td>
+            <td>
+                创建一个类继承plugins\weixin\PayNotify，并定义个handleOrder方法处理订单（例如修改支付状态等）
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

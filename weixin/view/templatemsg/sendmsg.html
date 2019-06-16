@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="__PLUGIN_TMPL__/public/static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="__PLUGIN_TMPL__/public/static/css/bootstrap-select.min.css">
+    <style>
+        .wrap {
+            padding: 20px 20px 70px;
+        }
+        .form-horizontal{
+            margin-top:20px;
+            width:auto;
+        }
+        .glyphicon-ok:before {
+            content: "\e013";
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:cmf_plugin_url('Weixin://AdminIndex/index')}">微信插件功能列表</a></li>
+        <li class="active"><a>消息模板列表</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:cmf_plugin_url('Weixin://Templatemsg/send')}">
+        <div class="form-group">
+            <label for="input-template_id" class="col-sm-2 control-label">消息模板</label>
+            <div class="col-md-6 col-sm-10">
+                <select class="form-control" name="template_id" id="input-template_id">
+                    <foreach name="template_list" item="vo">
+                        <option value="{$vo.template_id}">{$vo.title}</option>
+                    </foreach>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="template_content" class="col-sm-2 control-label">模板内容</label>
+            <div class="col-md-6 col-sm-10">
+                <textarea readonly class="form-control" name="" id="template_content" rows="6">{$vo.content}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="template_keywords" class="col-sm-2 control-label">填充模板数据</label>
+            <div id="template_keywords" class="col-md-6 col-sm-10">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-user_openid" class="col-sm-2 control-label">用户</label>
+            <div class="col-md-6 col-sm-10">
+                <select id="input-user_openid" class="selectpicker form-control" name="user_openid[]" multiple data-live-search="true" data-live-search-placeholder="搜索" data-actions-box="true">
+                    <foreach name="$user_list" item="vo">
+                        <option value="{$vo.openid}">
+                            <if condition="!empty($vo['nickname'])">
+                                {$vo.nickname}<if condition="!empty($vo['user_nickname'])&&$vo['user_nickname']!=$vo['nickname']">（{$vo['user_nickname']}）</if>
+                            <else />
+                                {$vo['user_nickname']}
+                            </if>
+                        </option>
+                    </foreach>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary js-ajax-submit">发送</button>
+                <a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script>
+    var GV = {
+        ROOT: "__ROOT__/",
+        WEB_ROOT: "__WEB_ROOT__/",
+        JS_ROOT: "static/js/",
+        APP: ''/*当前应用名*/
+    };
+</script>
+<script type="text/javascript" src="__PLUGIN_TMPL__/public/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="__STATIC__/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__PLUGIN_TMPL__/public/static/js/bootstrap-select.min.js"></script>
+<script src="__STATIC__/js/wind.js"></script>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+
+    var template_id = $('#input-template_id').val();
+    getTemplateContent(template_id);
+    $('#input-template_id').change(function(){
+        $('#template_content').html('');
+        var template_id = $(this).val();
+        getTemplateContent(template_id);
+    });
+
+    function getTemplateContent(template_id){
+        $('#template_keywords').parent().show();
+        $.ajax({
+            url:'{:cmf_plugin_url("Weixin://Templatemsg/getTemplateContent")}',
+            data:{"template_id":template_id},
+            success:function(res){
+                $('#template_content').html(res.data.content);
+                var keywords = res.data.keywords;
+                var html = '';
+                for(var i in keywords){
+                    html += keywords[i]+'：<input class="form-control" name="template_data[]" value="">';
+                }
+                $('#template_keywords').html(html);
+                if(''==html){
+                    $('#template_keywords').parent().hide();
+                }
+            }
+        });
+    }
+
+
+
+
+</script>
+</html>

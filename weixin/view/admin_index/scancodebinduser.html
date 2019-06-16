@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="__PLUGIN_TMPL__/public/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STATIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .wrap {
+            padding: 20px 20px 70px;
+        }
+        .table{
+            margin-top:20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap js-check-wrap">
+        <ul class="nav nav-tabs">
+            <li><a href="{:cmf_plugin_url('Weixin://AdminIndex/index')}">微信插件功能列表</a></li>
+            <li class="active"><a>扫码绑定管理员</a></li>
+        </ul>
+        <table class="table table-hover table-bordered table-list">
+            <tbody>
+            <tr>
+                <td>示例</td>
+                <td>
+                    <a href="{:cmf_plugin_url('Weixin://AdminAccount/scanCodeBindUser')}">扫码绑定微信</a>
+                </td>
+            </tr>
+            <tr>
+                <td>代码</td>
+                <td>
+                    <textarea readonly cols="80" rows="5" id="show_code"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>说明</td>
+                <td>
+                    把代码粘贴到模板文件中，修改成自己喜欢的样式，即可使用
+                    <br />
+                    参数user_id表示需要绑定的用户id，如果为空即自动在user表插入一条新数据
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="__PLUGIN_TMPL__/public/static/js/jquery.min.js"></script>
+<script>
+    $(function(){
+        var str = '<a href="{';
+        str += ":cmf_plugin_url('Weixin://AdminAccount/scanCodeBindUser',['user_id=>0'])";
+        str += '}">扫码绑定微信</a>';
+        $('#show_code').html(str);
+    });
+</script>
+</html>

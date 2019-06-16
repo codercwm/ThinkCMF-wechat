@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="__PLUGIN_TMPL__/public/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        .wrap {
+            padding: 20px 20px 70px;
+        }
+        .margin-top-20 {
+            margin-top: 20px !important;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#login_tab" data-toggle="tab">微信登录设置</a></li>
+        <li><a href="#tmpmsg_tab" data-toggle="tab">模板消息设置</a></li>
+        <li><a href="#pay_tab" data-toggle="tab">微信支付设置</a></li>
+    </ul>
+    <form class="form-horizontal js-ajax-form margin-top-20" role="form" action="{:url('admin/plugin/settingPost')}" method="post">
+        <input type="hidden" name="id" value="{$id}" readonly>
+        <input type="hidden" name="config[custom_config]" value="1" readonly>
+        <fieldset>
+            <div class="tabbable">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="login_tab">
+
+                        <div class="form-group">
+                            <label for="input-login_appid" class="col-sm-2 control-label">appid</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" id="input-login_appid" name="config[login_appid]" value="{$config.login_appid|default=''}">
+                                <p class="help-block">公众帐号appid</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-login_secret" class="col-sm-2 control-label">secret</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" id="input-login_secret" name="config[login_secret]" value="{$config.login_secret|default=''}">
+                                <p class="help-block">公众帐号secret</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="1">
+                                    {:lang('SAVE')}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tmpmsg_tab">
+
+                        <div class="form-group">
+                            <label for="input-tmpmsg_appid" class="col-sm-2 control-label">appid</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" id="input-tmpmsg_appid" name="config[tmpmsg_appid]" value="{$config.tmpmsg_appid|default=''}">
+                                <p class="help-block">公众帐号appid</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-tmpmsg_secret" class="col-sm-2 control-label">secret</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" id="input-tmpmsg_secret" name="config[tmpmsg_secret]" value="{$config.tmpmsg_secret|default=''}">
+                                <p class="help-block">公众帐号secret</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="1">
+                                    {:lang('SAVE')}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="pay_tab">
+
+                        <div class="form-group">
+                            <label for="input-pay_appid" class="col-sm-2 control-label">appid</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" id="input-pay_appid" name="config[pay_appid]" value="{$config.pay_appid|default=''}">
+                                <p class="help-block">公众帐号appid</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-pay_secret" class="col-sm-2 control-label">secret</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" id="input-pay_secret" name="config[pay_secret]" value="{$config.pay_secret|default=''}">
+                                <p class="help-block">公众帐号secret</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-pay_merchantid" class="col-sm-2 control-label">merchantid</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" id="input-pay_merchantid" name="config[pay_merchantid]" value="{$config.pay_merchantid|default=''}">
+                                <p class="help-block">商户号</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-pay_key" class="col-sm-2 control-label">key</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" id="input-pay_key" name="config[pay_key]" value="{$config.pay_key|default=''}">
+                                <p class="help-block">商户支付秘钥</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="1">
+                                    {:lang('SAVE')}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+<script>
+    //全局变量
+    var GV = {
+        HOST: "{$_SERVER['HTTP_HOST']|default=''}",
+        ROOT: "__ROOT__/",
+        WEB_ROOT: "__WEB_ROOT__/",
+        JS_ROOT: "static/js/"
+    };
+</script>
+<script src="__PLUGIN_TMPL__/public/static/js/jquery.min.js"></script>
+<script src="__STATIC__/js/wind.js"></script>
+<script src="__PLUGIN_TMPL__/public/static/js/bootstrap.min.js"></script>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

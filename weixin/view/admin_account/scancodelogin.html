@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html style="background:#343a40!important">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="robots" content="noindex,nofollow">
+    <!-- HTML5 shim for IE8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+    <link href="__PLUGIN_TMPL__/public/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STATIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="__PLUGIN_TMPL__/public/static/css/login.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        if (window.parent !== window.self) {
+            document.write              = ''; 
+            window.parent.location.href = window.self.location.href;
+            setTimeout(function () {
+                document.body.innerHTML = ''; 
+            }, 0);
+        }
+    </script>
+    <style>
+        body{background: none ;}
+        #login_qrcode img{width: 185px;border:6px solid #fbfbfbc7;} 
+        .col-md-offset-4{
+            margin-top: 60px;
+            background: rgba(0,0,0,0.2);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        #skin-tectile {
+            background: url(../img/body/tectile.png);
+        }
+        body{
+            color:#fff;
+        }
+    </style>
+</head>
+<body id="skin-tectile">
+<div class="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <h4 class="text-center"><img style="width: 225px;margin-top: -120px;" src="https://www.zhuisusys.com/static/portal/images/logo.png" alt=""></h4>
+                <h3 style="color:white;">微信扫一扫登录</h3>
+                <br>
+                <div class="login_qrcode">
+                    <if condition="!empty($qrcode_str)">
+                        <img src="{$qrcode_str}" alt="">
+                    </if>
+                </div>
+                <div class="hint">
+                    
+                </div>
+                <a href="{:url('Admin/public/login')}">
+                <!-- <div class="btn btn-primary btn-block back-login">
+                    <i class="fa fa-arrow-left"></i>
+                    账号密码登录
+                </div> -->
+                </a>
+                <br>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="__PLUGIN_TMPL__/public/static/js/jquery.min.js"></script>
+<script>
+    var verify_key = '{$verify_key}';
+    setInterval(function(){
+        $.ajax({
+            url:"{:cmf_plugin_url('Weixin://AdminAccount/scanCodeCheckLogin')}",
+            type:'post',
+            dataType:'json',
+            data:{"verify_key":verify_key},
+            success:function(res){
+                var msg = res.msg;
+                if(1==res.code){
+                    var str = '<i style="color:#62b900;" class="fa fa-check"></i> '+msg;
+                }else{
+                    var str = '<i style="color:red;" class="fa fa-times"></i> '+msg;
+                }
+                if(''!=msg){
+                    $('.hint').html(str);
+                }else{
+                    $('.hint').html('');
+                }
+                if(''!=res.url){
+                    setTimeout(function(){
+                        location.href = res.url;
+                    },1000);
+                }
+
+            }
+        });
+    },2000);
+</script>
+</body>
+</html>

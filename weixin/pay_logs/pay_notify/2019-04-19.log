@@ -1,0 +1,116 @@
+[2019-04-19 11:26:28][debug]
+    call back:{"appid":"wx426b3015555a46be","bank_type":"CFT","cash_fee":"1","fee_type":"CNY","is_subscribe":"N","mch_id":"1900009851","nonce_str":"o5gvdz38gjw2u8k254eik7jlkj811rjv","openid":"oHZx6uGiuW_v3wU8dK6AxEeukcE8","out_trade_no":"20190419112609","result_code":"SUCCESS","return_code":"SUCCESS","sign":"A9F577756268DFF9ED52C2780F526D57A339112BCAFBE619B8675666D3129D2D","time_end":"20190419112628","total_fee":"1","trade_type":"NATIVE","transaction_id":"4200000296201904193715361656"}
+[2019-04-19 11:26:29][debug]
+    来了handleOrder:
+[2019-04-19 11:32:49][debug]
+    来了handleOrder:
+[2019-04-19 11:32:49][error]
+    
+    call back， return xml:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:55,function:ERROR
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:104,function:LogAfterProcess
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:34,function:ReplyNotify
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:23,function:Handle
+    function:__construct
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:439,function:newInstanceArgs
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:364,function:invokeClass
+    function:invokeMethod
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Facade.php,line:123,function:call_user_func_array
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/controller/PluginController.php,line:34,function:__callStatic
+    function:index
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:373,function:invokeArgs
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:411,function:invokeMethod
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/route/dispatch/Callback.php,line:23,function:invoke
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/route/Dispatch.php,line:168,function:exec
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:475,function:run
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:185,function:call_user_func_array
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:130,function:call_user_func
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:478,function:dispatch
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/index.php,line:34,function:run
+
+[2019-04-19 11:48:55][error]
+    
+    call back， return xml:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:55,function:ERROR
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:104,function:LogAfterProcess
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:34,function:ReplyNotify
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:23,function:Handle
+    function:__construct
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:439,function:newInstanceArgs
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:284,function:invokeClass
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:782,function:make
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/route/dispatch/Module.php,line:95,function:controller
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/route/Dispatch.php,line:168,function:exec
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:475,function:run
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:185,function:call_user_func_array
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:130,function:call_user_func
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:478,function:dispatch
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/index.php,line:34,function:run
+
+[2019-04-19 13:24:01][error]
+    
+    call back， return xml:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:55,function:ERROR
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:104,function:LogAfterProcess
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:34,function:ReplyNotify
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:23,function:Handle
+    function:__construct
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:439,function:newInstanceArgs
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:284,function:invokeClass
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:782,function:make
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/route/dispatch/Module.php,line:95,function:controller
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/route/Dispatch.php,line:168,function:exec
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:475,function:run
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:185,function:call_user_func_array
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:130,function:call_user_func
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:478,function:dispatch
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/index.php,line:34,function:run
+
+[2019-04-19 13:30:23][error]
+    
+    call back， return xml:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:55,function:ERROR
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:104,function:LogAfterProcess
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:34,function:ReplyNotify
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:23,function:Handle
+    function:__construct
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:439,function:newInstanceArgs
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:284,function:invokeClass
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:782,function:make
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/route/dispatch/Module.php,line:95,function:controller
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/route/Dispatch.php,line:168,function:exec
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:475,function:run
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:185,function:call_user_func_array
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:130,function:call_user_func
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:478,function:dispatch
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/index.php,line:34,function:run
+
+[2019-04-19 13:32:17][error]
+    
+    call back， return xml:<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:55,function:ERROR
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:104,function:LogAfterProcess
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/lib/vendor/wxpay/WxPayNotify.php,line:34,function:ReplyNotify
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/plugins/weixin/PayNotify.php,line:23,function:Handle
+    function:__construct
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:439,function:newInstanceArgs
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Container.php,line:284,function:invokeClass
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:782,function:make
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/route/dispatch/Module.php,line:95,function:controller
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/route/Dispatch.php,line:168,function:exec
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:475,function:run
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:185,function:call_user_func_array
+    function:think\{closure}
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkphp/library/think/Middleware.php,line:130,function:call_user_func
+    file:/data/wwwroot/default/trace.zhuisusys.com/vendor/thinkcmf/cmf/src/App.php,line:478,function:dispatch
+    file:/data/wwwroot/default/trace.zhuisusys.com/public/index.php,line:34,function:run
+

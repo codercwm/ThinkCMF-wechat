@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="__PLUGIN_TMPL__/public/static/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .wrap {
+            padding: 20px 20px 70px;
+        }
+        .table{
+            margin-top:20px;
+            width:auto;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a>微信插件功能列表</a></li>
+        <li><a href="{:cmf_plugin_url('Weixin://AdminIndex/clearCache')}">清除缓存</a></li>
+    </ul>
+    <table class="table table-hover table-bordered table-list">
+        <tbody>
+            <tr>
+                <td>扫码登录</td>
+                <td>
+                    <a class="btn btn-xs btn-primary" href="{:cmf_plugin_url('Weixin://AdminIndex/scanCodeLogin')}">使用说明</a>
+                </td>
+            </tr>
+            <tr>
+                <td>扫码绑定管理员</td>
+                <td>
+                    <a class="btn btn-xs btn-primary" href="{:cmf_plugin_url('Weixin://AdminIndex/scanCodeBindUser')}">使用说明</a>
+                </td>
+            </tr>
+            <tr>
+                <td>模板消息</td>
+                <td>
+                    <a class="btn btn-xs btn-primary" href="{:cmf_plugin_url('Weixin://AdminIndex/tmplmsg')}">使用说明</a>
+                    <a class="btn btn-xs btn-primary" href="{:cmf_plugin_url('Weixin://Templatemsg/templateList')}">模板列表</a>
+                    <a class="btn btn-xs btn-primary" href="{:cmf_plugin_url('Weixin://Templatemsg/sendMsg')}">发送消息</a>
+                </td>
+            </tr>
+            <tr>
+                <td>扫码支付</td>
+                <td>
+                    <a class="btn btn-xs btn-primary" href="{:cmf_plugin_url('Weixin://AdminIndex/scanCodePay')}">使用说明</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

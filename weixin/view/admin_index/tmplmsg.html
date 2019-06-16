@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="__PLUGIN_TMPL__/public/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STATIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .wrap {
+            padding: 20px 20px 70px;
+        }
+        .table{
+            margin-top:20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap js-check-wrap">
+        <ul class="nav nav-tabs">
+            <li><a href="{:cmf_plugin_url('Weixin://AdminIndex/index')}">微信插件功能列表</a></li>
+            <li class="active"><a>微信模板消息</a></li>
+        </ul>
+        <table class="table table-hover table-bordered table-list">
+            <tbody>
+
+            <tr>
+                <td>示例</td>
+                <td>
+                    <textarea readonly cols="80" rows="30">
+        $param = [
+            'openids' => ['odsO-0atVKlI93FgNQJclOv9YSf4','odsO-0atVKlI93FgNQJclOv9YSf4'],//传数组
+            'template_id' => 'q79MZ1r9WIYGmS-cd8qiGEk6dH_bOgmcJuC5sVSV3J0',
+            'url' => 'http://oa.zhuisusys.com/admin',//点击后跳转链接
+            'data' => [
+                [
+                    'value' => '绿之源配送中心',
+                ],
+                [
+                    'value' => '0',
+                    'color' => 'red',
+                ],
+                [
+                    'value' => '0',
+                    'color' => 'red',
+                ],
+                [
+                    'value' => '请及时上传过往数据',
+                    'color' => 'red',
+                ],
+            ],
+        ];
+
+        //发送消息
+        $weixin_plugin = new \plugins\weixin\WeixinPlugin();
+
+        $weixin_plugin->sendTemplateMsg($param);
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>说明</td>
+                <td>
+                    <a href="{:cmf_plugin_url('Weixin://Templatemsg/templateList')}">template_id从这里复制</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
